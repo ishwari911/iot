@@ -1,0 +1,111 @@
+
+• Raspberry Pi 4 (4GB or 8GB recommended; 2GB works but very slow)
+• Storage Device:
+
+* Option 1: MicroSD Card (minimum 32GB, Class 10)
+* Option 2 (Recommended): USB 3.0 SSD (faster performance)
+  • HDMI Monitor
+  • Keyboard and Mouse
+  • Official Raspberry Pi Power Supply
+  • Optional: USB Ethernet Adapter
+
+---
+
+3. Required Software:
+
+• Windows PC
+• Windows on Raspberry (WoR) Tool
+• Windows 10 ARM64 ISO
+
+------------------------------------------------------
+
+5. Procedure
+
+Step 1: Download Windows on Raspberry (WoR)
+
+1. Visit: [https://www.worproject.ml/downloads](https://www.worproject.ml/downloads)
+2. Download the latest pre-release version of WoR tool.
+3. Extract the downloaded ZIP file.
+
+---
+
+Step 2: Prepare Windows 10 ARM64 ISO
+
+1. Go to: [https://uupdump.net](https://uupdump.net)
+2. Select Windows 10 ARM64 (latest stable build).
+3. Download the provided script (ZIP file).
+4. Extract and run the script on your Windows PC.
+5. The script downloads files from Microsoft servers and builds the ISO.
+6. At the end, you will get a Windows 10 ARM64 ISO file.
+
+---
+
+Step 3: Install WoR and Prepare SD/SSD
+
+1. Insert SD card or SSD into your Windows PC.
+2. Run WoR.exe as Administrator.
+3. Follow the installation wizard:
+
+• Step 1: Select storage device (SD/SSD).
+• Step 2: Select Windows 10 ARM64 ISO file.
+• Step 3: Select device type → Raspberry Pi 4.
+• Step 4: WoR automatically downloads required UEFI firmware and drivers.
+• Step 5: Confirm installation settings.
+
+4. Click Install.
+
+Flashing process may take 30–60 minutes depending on storage speed.
+
+---
+
+Step 4: Boot Raspberry Pi 4
+
+1. Insert prepared SD card or SSD into Raspberry Pi 4.
+2. Power ON the Raspberry Pi.
+3. It will load into UEFI firmware screen.
+
+Optional (Recommended):
+
+• Enter UEFI settings.
+• Change Boot Order to make SD/SSD first boot option.
+• Save and reboot.
+
+---
+
+Step 5: Windows Setup
+
+1. Windows 10 installation screen appears.
+2. Select:
+   • Language
+   • Region
+   • Keyboard Layout
+3. Create or skip Microsoft account.
+4. Complete setup wizard.
+
+---
+
+Step 6: Network Setup
+
+• Use USB-to-Ethernet adapter if WiFi is not working.
+• Install Microsoft Edge (available on desktop).
+
+---
+
+6. Output:
+
+• Windows 10 ARM64 successfully boots on Raspberry Pi 4.
+• Desktop environment loads.
+• Basic applications can run.
+
+Note:
+Performance depends on RAM and storage type. SSD gives better performance than SD card.
+
+---
+
+7. Result:
+
+Windows 10 ARM64 was successfully installed and booted on Raspberry Pi 4 using the WoR tool and UEFI firmware.
+
+---
+
+

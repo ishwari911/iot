@@ -1,0 +1,84 @@
+2. Required Components:
+
+Hardware:
+
+1. Raspberry Pi – 1
+2. Power Supply – 1
+3. Micro SD Card (Raspberry Pi OS installed) – 1
+4. HDMI Monitor – 1
+5. HDMI Cable – 1
+6. USB Keyboard – 1
+7. USB Mouse – 1
+8. TM1637 4-Digit 7-Segment Display – 1
+9. Female-to-Female Jumper Wires – 4
+
+Software:
+
+1. Raspberry Pi OS
+2. Python 3
+3. RPi.GPIO library
+4. tm1637 Python library
+
+---
+4. Connection Scheme
+
+TM1637 Board Pin → Raspberry Pi Pin
+
+GND  → Physical Pin 14 (GND)
+VCC  → Physical Pin 4 
+DIO  → Physical Pin 18 (GPIO24)
+CLK  → Physical Pin 16 (GPIO23)
+-------------------------------------
+
+5. Procedure
+
+Step 1: Connect Raspberry Pi and power it ON.
+
+Step 2: Connect TM1637 display according to the connection table above.
+
+Step 3: Install Required Libraries
+
+Open Terminal and type:
+
+pip install RPi.GPIO --break-system-packages
+
+Clone the tml1637 library:
+
+git clone https://github.com/bhoomikapansare/7Segment.git
+Move into folder if required.
+
+-------------------------------------------------------
+
+Step 4: Open Thonny
+
+Raspberry Pi → Programming → Thonny Python IDE
+
+Save your program in the same folder as the tml1637 file.
+
+Save tml1637.py and time_display.py in same folder
+-------------------------------------------------------
+
+6. Python Program
+
+Save file as: time_display.py
+
+import sys
+import time
+import datetime
+import RPi.GPIO as GPIO
+import tm1637
+GPIO.setmode(GPIO.BCM)
+Display = tm1637.TM1637()
+Display.Clear()
+Display.SetBrightness(1)
+while True:
+    now = datetime.datetime.now()
+    hour = now.hour
+    minute = now.minute
+    second = now.second
+    currenttime = [int(hour / 10), hour % 10, int(minute / 10), minute % 10]
+    Display.Show(currenttime)
+    Display.ShowDoublepoint(second % 2)
+    time.sleep(1)
+
+---------------------------------------------------
